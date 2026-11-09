@@ -13,14 +13,14 @@ export default defineConfig(async () => {
     const aliases: Record<string, string> = {};
     try {
         const packages = fs.readdirSync(
-            path.resolve(__dirname, '../../packages')
+            path.resolve(import.meta.dirname, '../../packages')
         );
         for (const dirName of packages) {
             if (dirName === 'create-react-admin') continue;
             const packageJson = JSON.parse(
                 fs.readFileSync(
                     path.resolve(
-                        __dirname,
+                        import.meta.dirname,
                         '../../packages',
                         dirName,
                         'package.json'
@@ -29,7 +29,7 @@ export default defineConfig(async () => {
                 )
             );
             aliases[packageJson.name] = path.resolve(
-                __dirname,
+                import.meta.dirname,
                 `../../packages/${packageJson.name}/src`
             );
         }
