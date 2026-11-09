@@ -11,7 +11,7 @@
         "build": "vite build",
         "serve": "vite preview",
         "type-check": "tsc --noEmit",
-        "postinstall": "node scripts/install-rolldown-wasm.js"
+        "postinstall": "node scripts/check-rolldown-wasm.js"
     },
     "dependencies": {
         "@mui/icons-material": "^5.16.12",
@@ -34,6 +34,7 @@
         "react-router-dom": "^7.18.5"
     },
     "devDependencies": {
+        "@rolldown/binding-wasm32-wasi": "1.2.16",
         "@types/react": "^18.3.31",
         "@types/react-dom": "^18.3.7",
         "@vitejs/plugin-react": "^6.0.5",
